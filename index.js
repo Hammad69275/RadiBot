@@ -56,7 +56,7 @@ client.on("interactionCreate",async (interaction) => {
 client.on("interactionCreate",async(interaction) => {
     
     if(interaction.isCommand()) return
-    if(!interaction.member.voice.channelId) return interaction.editReply({content:"You must be in a voice channel to interact with the menu",ephemeral:true})
+    if(!interaction.member.voice.channelId) return interaction.reply({content:"You must be in a voice channel to interact with the menu",ephemeral:true})
 
     if(interaction.isButton()){
         if(interaction.customId === "search"){
