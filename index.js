@@ -291,14 +291,9 @@ function generateMenu(){
     .setLabel("Search")
     .setStyle("Danger")
     .setCustomId("search")
-
-    let favourites = new ButtonBuilder()
-    .setLabel("Favourites")
-    .setStyle("Danger")
-    .setCustomId("Favourites")
     
     let row = new ActionRowBuilder()
-    .addComponents([search,favourites])
+    .addComponents([search])
 
     return {embeds:[embed],components:[row]}
 }
