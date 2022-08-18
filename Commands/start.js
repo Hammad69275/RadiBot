@@ -19,15 +19,10 @@ module.exports = {
         .setStyle("Danger")
         .setCustomId("search")
 
-        let favourites = new ButtonBuilder()
-        .setLabel("Favourites")
-        .setStyle("Danger")
-        .setCustomId("Favourites")
-        
         let row = new ActionRowBuilder()
-        .addComponents([search,favourites])
+        .addComponents([search])
 
-        let channel = await interaction.guild.channels.create({type:0,name:"Gujjar Radio Network"})
+        let channel = await interaction.guild.channels.create({type:0,name:process.env.CHANNEL_NAME})
         
         channel.send({embeds:[embed],components:[row]})
         
