@@ -126,8 +126,6 @@ client.on("interactionCreate",async(interaction) => {
     
     if(interaction.isModalSubmit()){
         
-        await interaction.deferUpdate()
-
         let fields = interaction.fields.components.map(f => {
             return {
                 name:f.components[0].customId,
@@ -135,10 +133,12 @@ client.on("interactionCreate",async(interaction) => {
             }
         }).filter(f => f.value.length > 0)
 
-        if(fields.length > 1) return interaction.editReply({content:"Please Only Fill One Of The Fields",ephemeral:true})
-        if(fields.length < 1) return interaction.editReply({content:"Please Fill One Of The Fields",ephemeral:true})
+        if(fields.length > 1) return interaction.reply({content:"Please Only Fill One Of The Fields",ephemeral:true})
+        if(fields.length < 1) return interaction.reply({content:"Please Fill One Of The Fields",ephemeral:true})
 
-        let rawData
+        await interaction.deferUpdate()
+
+	let rawData
 
         switch (fields[0].name.toLowerCase()){
             case "name":
