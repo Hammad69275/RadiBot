@@ -215,7 +215,7 @@ client.on("interactionCreate",async(interaction) => {
 
         }catch(err){
             console.log(err)
-            return interaction.reply({content:"An error occured while attempting to play station. Please check if bot has the permissions to join a voice channel. If error remains, contact the `Developed By ${dev}`eloper",ephemeral:true})
+            return interaction.reply({content:"An error occured while attempting to play station. Please check if bot has the permissions to join a voice channel. If error remains, contact the Developer",ephemeral:true})
         }
 
         interaction.update(await generateStationMenu(station))
