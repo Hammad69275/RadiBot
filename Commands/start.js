@@ -12,7 +12,7 @@ module.exports = {
         .setDescription("Search For Stations | Play Stations | Save Them To Favourites")
         .setColor("#36393F")
         .setImage("https://i.pinimg.com/originals/f0/be/66/f0be6640bddc93b159993525f103fc33.gif")
-        .setFooter({text:dev})
+        .setFooter({text:`Developed By ${process.env.DEV}`})
 
         let search = new ButtonBuilder()
         .setLabel("Search")
